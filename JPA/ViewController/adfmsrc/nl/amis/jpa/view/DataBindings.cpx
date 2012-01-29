@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="nl.amis.jpa.view" ClientType="Generic">
+  <pageMap>
+    <page path="/allDepartments.jsf" usageId="nl_amis_jpa_view_allDepartmentsPageDef"/>
+    <page path="/departmentOfLocation1700.jsf" usageId="nl_amis_jpa_view_departmentOfLocation1700PageDef"/>
+    <page path="/findDepartment.jsf" usageId="nl_amis_jpa_view_findDepartmentPageDef"/>
+    <page path="/allDepartmentsRemote.jsf" usageId="nl_amis_jpa_view_allDepartmentsRemotePageDef"/>
+    <page path="/allDepartmentsJavaSession.jsf" usageId="nl_amis_jpa_view_allDepartmentsJavaSessionPageDef"/>
+    <page path="/allDepartmentsJavaSession2.jsf" usageId="nl_amis_jpa_view_allDepartmentsJavaSession2PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="nl_amis_jpa_view_allDepartmentsPageDef" path="nl.amis.jpa.view.pageDefs.allDepartmentsPageDef"/>
+    <page id="nl_amis_jpa_view_departmentOfLocation1700PageDef"
+          path="nl.amis.jpa.view.pageDefs.departmentOfLocation1700PageDef"/>
+    <page id="nl_amis_jpa_view_findDepartmentPageDef" path="nl.amis.jpa.view.pageDefs.findDepartmentPageDef"/>
+    <page id="nl_amis_jpa_view_allDepartmentsRemotePageDef"
+          path="nl.amis.jpa.view.pageDefs.allDepartmentsRemotePageDef"/>
+    <page id="nl_amis_jpa_view_allDepartmentsJavaSessionPageDef"
+          path="nl.amis.jpa.view.pageDefs.allDepartmentsJavaSessionPageDef"/>
+    <page id="nl_amis_jpa_view_allDepartmentsJavaSession2PageDef"
+          path="nl.amis.jpa.view.pageDefs.allDepartmentsJavaSession2PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HrJavaServiceFacade" path="nl.amis.jpa.model.HrJavaServiceFacade"/>
+    <dc id="HrRemote" path="nl.amis.jpa.model.HrRemote"/>
+    <dc id="HrLocal" path="nl.amis.jpa.model.HrLocal"/>
+  </dataControlUsages>
+</Application>

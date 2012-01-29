@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="departmentOfLocation1700.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1">
+                <f:facet name="center">
+                    <af:table value="#{bindings.departmentsLocation1700.collectionModel}" var="row"
+                              rows="#{bindings.departmentsLocation1700.rangeSize}"
+                              emptyText="#{bindings.departmentsLocation1700.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.departmentsLocation1700.rangeSize}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.departmentsLocation1700.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.departmentsLocation1700.collectionModel.makeCurrent}"
+                              rowSelection="single" id="t1">
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.departmentId.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.departmentId.label}" id="c1">
+                            <af:inputText value="#{row.bindings.departmentId.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.departmentId.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.departmentId.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.departmentId.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.departmentId.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.departmentId.tooltip}"
+                                          id="it1">
+                                <f:validator binding="#{row.bindings.departmentId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.departmentName.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.departmentName.label}" id="c2">
+                            <af:inputText value="#{row.bindings.departmentName.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.departmentName.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.departmentName.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.departmentName.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.departmentName.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.departmentName.tooltip}"
+                                          id="it2">
+                                <f:validator binding="#{row.bindings.departmentName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.locationId.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.locationId.label}" id="c3">
+                            <af:inputText value="#{row.bindings.locationId.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.locationId.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.locationId.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.locationId.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.locationId.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.locationId.tooltip}"
+                                          id="it3">
+                                <f:validator binding="#{row.bindings.locationId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.label}"
+                                   id="c4">
+                            <af:inputText value="#{row.departmentManager.bindings.employeeId.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.departmentManager.employeeId.tooltip}"
+                                          id="it4">
+                                <f:validator binding="#{row.departmentManager.bindings.employeeId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.label}"
+                                   id="c5">
+                            <af:inputText value="#{row.departmentManager.bindings.firstName.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.departmentManager.firstName.tooltip}"
+                                          id="it5">
+                                <f:validator binding="#{row.departmentManager.bindings.firstName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.name}"
+                                   sortable="false"
+                                   headerText="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.label}"
+                                   id="c6">
+                            <af:inputText value="#{row.departmentManager.bindings.lastName.inputValue}"
+                                          label="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.label}"
+                                          required="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.mandatory}"
+                                          columns="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.displayWidth}"
+                                          maximumLength="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.precision}"
+                                          shortDesc="#{bindings.departmentsLocation1700.hints.departmentManager.lastName.tooltip}"
+                                          id="it6">
+                                <f:validator binding="#{row.departmentManager.bindings.lastName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                    <!-- id="af_one_column_stretched"   -->
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

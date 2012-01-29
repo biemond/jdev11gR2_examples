@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.60.81" id="DataControls"
+                    Package="nl.amis.jpa.model">
+  <AdapterDataControl id="HrLocal" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="nl.amis.jpa.model.services.HrLocal"
+                      BeanClass="nl.amis.jpa.model.services.HrLocal" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Departments"/>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Employees"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.0" ejb-name="Hr" ejb-type="Session"
+                      ejb-business-interface="nl.amis.jpa.model.services.HrLocal" ejb-interface-type="local"
+                      initial-context-factory="weblogic.jndi.WLInitialContextFactory"
+                      DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                      xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="HrRemote" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="nl.amis.jpa.model.services.HrRemote"
+                      BeanClass="nl.amis.jpa.model.services.HrRemote" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Departments"/>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Employees"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.0" ejb-name="HrRemote" ejb-type="Session"
+                      ejb-business-interface="nl.amis.jpa.model.services.HrRemote" ejb-interface-type="remote"
+                      jndi-name="JPA-Model-HrRemote#nl.amis.jpa.model.services.HrRemote"
+                      provider-url="t3://127.0.0.1:7101" initial-context-factory="weblogic.jndi.WLInitialContextFactory"
+                      DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                      xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="HrJavaServiceFacade" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="nl.amis.jpa.model.services.HrJavaServiceFacade"
+                      BeanClass="nl.amis.jpa.model.services.HrJavaServiceFacade"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Departments"/>
+      <TypeInfo FullName="nl.amis.jpa.model.entities.Employees"/>
+      <TypeInfo FullName="nl.amis.jpa.model.services.HrJavaServiceFacade"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="nl.amis.jpa.model.services.HrJavaServiceFacade"
+                       DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

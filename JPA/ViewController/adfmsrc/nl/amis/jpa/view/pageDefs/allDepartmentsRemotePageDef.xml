@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="allDepartmentsRemotePageDef"
+                Package="nl.amis.jpa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HrRemote" id="HrRemoteIterator"/>
+    <accessorIterator MasterBinding="HrRemoteIterator" Binds="departmentsFindAll" RangeSize="25" DataControl="HrRemote"
+                      BeanClass="nl.amis.jpa.model.entities.Departments" id="departmentsFindAllIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="departmentManager"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Employees">
+        <AttrNames>
+          <Item Value="commissionPct"/>
+          <Item Value="email"/>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="hireDate"/>
+          <Item Value="jobId"/>
+          <Item Value="lastName"/>
+          <Item Value="phoneNumber"/>
+          <Item Value="salary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

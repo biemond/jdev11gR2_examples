@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81"
+                id="allDepartmentsJavaSession2PageDef" Package="nl.amis.jpa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HrJavaServiceFacade" id="HrJavaServiceFacadeIterator"/>
+    <accessorIterator MasterBinding="HrJavaServiceFacadeIterator" Binds="departmentsFindAll" RangeSize="10"
+                      DataControl="HrJavaServiceFacade" BeanClass="nl.amis.jpa.model.entities.Departments"
+                      id="departmentsFindAllIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HrJavaServiceFacade" id="HrJavaServiceFacadeIterator1"/>
+    <accessorIterator MasterBinding="HrJavaServiceFacadeIterator1" Binds="employeesFindAll" RangeSize="-1"
+                      DataControl="HrJavaServiceFacade" BeanClass="nl.amis.jpa.model.entities.Employees"
+                      id="employeesFindAllIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+          <Item Value="managerId" />
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="HrJavaServiceFacade"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="HrJavaServiceFacade"/>
+    <tree IterBinding="employeesFindAllIterator" id="employeesFindAll">
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Employees" Name="employeesFindAll0">
+        <AttrNames>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="lastName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

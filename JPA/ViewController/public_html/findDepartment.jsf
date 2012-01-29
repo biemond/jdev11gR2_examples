@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="findDepartment.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" bottomHeight="400px">
+                <f:facet name="center">
+                        <af:panelHeader text="departmentsFindAll" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.DepartmentsLocationCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.DepartmentsLocationCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.DepartmentsLocationCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.DepartmentsLocationCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::resId1"/>
+                        </af:panelHeader>
+               </f:facet>
+                <f:facet name="bottom">
+                        <af:table value="#{bindings.departmentsFindAll.collectionModel}" var="row"
+                                  rows="#{bindings.departmentsFindAll.rangeSize}"
+                                  emptyText="#{bindings.departmentsFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.departmentsFindAll.rangeSize}" rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.departmentsFindAll.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.departmentsFindAll.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="resId1">
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentId.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.departmentId.label}"
+                                       id="resId1c1">
+                                <af:outputText value="#{row.departmentId}" id="ot1"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentName.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                                       id="resId1c2">
+                                <af:outputText value="#{row.departmentName}" id="ot2"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.locationId.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.locationId.label}" id="resId1c3">
+                                <af:outputText value="#{row.locationId}" id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.label}"
+                                       id="resId1c4">
+                                <af:outputText value="#{row.departmentManager.bindings.employeeId.inputValue}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.firstName.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.departmentManager.firstName.label}"
+                                       id="resId1c5">
+                                <af:outputText value="#{row.departmentManager.bindings.firstName.inputValue}" id="ot5"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.lastName.name}"
+                                       sortable="false"
+                                       headerText="#{bindings.departmentsFindAll.hints.departmentManager.lastName.label}"
+                                       id="resId1c6">
+                                <af:outputText value="#{row.departmentManager.bindings.lastName.inputValue}" id="ot6"/>
+                            </af:column>
+                        </af:table>
+                    <!-- id="af_one_column_stretched"   -->
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

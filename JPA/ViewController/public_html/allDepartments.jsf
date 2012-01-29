@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="allDepartments.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" bottomHeight="300px">
+                <f:facet name="center">
+                        <af:panelHeader text="All departments" id="ph1">
+                            <af:table value="#{bindings.departmentsFindAll.collectionModel}" var="row"
+                                      rows="#{bindings.departmentsFindAll.rangeSize}"
+                                      emptyText="#{bindings.departmentsFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      fetchSize="#{bindings.departmentsFindAll.rangeSize}" rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.departmentsFindAll.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.departmentsFindAll.collectionModel.makeCurrent}"
+                                      rowSelection="single" id="t1">
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentId.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.departmentId.label}" id="c1">
+                                    <af:inputText value="#{row.bindings.departmentId.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.departmentId.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.departmentId.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.departmentId.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.departmentId.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.departmentId.tooltip}"
+                                                  id="it1">
+                                        <f:validator binding="#{row.bindings.departmentId.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentName.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                                           id="c2">
+                                    <af:inputText value="#{row.bindings.departmentName.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.departmentName.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.departmentName.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.departmentName.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.departmentName.tooltip}"
+                                                  id="it2" autoSubmit="true">
+                                        <f:validator binding="#{row.bindings.departmentName.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.locationId.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.locationId.label}" id="c3">
+                                    <af:inputText value="#{row.bindings.locationId.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.locationId.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.locationId.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.locationId.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.locationId.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.locationId.tooltip}"
+                                                  id="it3">
+                                        <f:validator binding="#{row.bindings.locationId.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.label}"
+                                           id="c4">
+                                    <af:inputText value="#{row.departmentManager.bindings.employeeId.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.departmentManager.employeeId.tooltip}"
+                                                  id="it4">
+                                        <f:validator binding="#{row.departmentManager.bindings.employeeId.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.firstName.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.departmentManager.firstName.label}"
+                                           id="c5">
+                                    <af:inputText value="#{row.departmentManager.bindings.firstName.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.departmentManager.firstName.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.departmentManager.firstName.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.departmentManager.firstName.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.departmentManager.firstName.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.departmentManager.firstName.tooltip}"
+                                                  id="it5">
+                                        <f:validator binding="#{row.departmentManager.bindings.firstName.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentManager.lastName.name}"
+                                           sortable="false"
+                                           headerText="#{bindings.departmentsFindAll.hints.departmentManager.lastName.label}"
+                                           id="c6">
+                                    <af:inputText value="#{row.departmentManager.bindings.lastName.inputValue}"
+                                                  label="#{bindings.departmentsFindAll.hints.departmentManager.lastName.label}"
+                                                  required="#{bindings.departmentsFindAll.hints.departmentManager.lastName.mandatory}"
+                                                  columns="#{bindings.departmentsFindAll.hints.departmentManager.lastName.displayWidth}"
+                                                  maximumLength="#{bindings.departmentsFindAll.hints.departmentManager.lastName.precision}"
+                                                  shortDesc="#{bindings.departmentsFindAll.hints.departmentManager.lastName.tooltip}"
+                                                  id="it6">
+                                        <f:validator binding="#{row.departmentManager.bindings.lastName.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                            </af:table>
+                        </af:panelHeader>
+                    <!-- id="af_one_column_stretched"   -->
+                </f:facet>
+                <f:facet name="bottom">
+                    <af:table value="#{bindings.employees.collectionModel}" var="row"
+                              rows="#{bindings.employees.rangeSize}"
+                              emptyText="#{bindings.employees.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.employees.rangeSize}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.employees.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.employees.collectionModel.makeCurrent}"
+                              rowSelection="single" id="t2">
+                        <af:column sortProperty="#{bindings.employees.hints.employeeId.name}" sortable="false"
+                                   headerText="#{bindings.employees.hints.employeeId.label}" id="c7">
+                            <af:inputText value="#{row.bindings.employeeId.inputValue}"
+                                          label="#{bindings.employees.hints.employeeId.label}"
+                                          required="#{bindings.employees.hints.employeeId.mandatory}"
+                                          columns="#{bindings.employees.hints.employeeId.displayWidth}"
+                                          maximumLength="#{bindings.employees.hints.employeeId.precision}"
+                                          shortDesc="#{bindings.employees.hints.employeeId.tooltip}" id="it7">
+                                <f:validator binding="#{row.bindings.employeeId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.employees.hints.firstName.name}" sortable="false"
+                                   headerText="#{bindings.employees.hints.firstName.label}" id="c8">
+                            <af:inputText value="#{row.bindings.firstName.inputValue}"
+                                          label="#{bindings.employees.hints.firstName.label}"
+                                          required="#{bindings.employees.hints.firstName.mandatory}"
+                                          columns="#{bindings.employees.hints.firstName.displayWidth}"
+                                          maximumLength="#{bindings.employees.hints.firstName.precision}"
+                                          shortDesc="#{bindings.employees.hints.firstName.tooltip}" id="it8">
+                                <f:validator binding="#{row.bindings.firstName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.employees.hints.lastName.name}" sortable="false"
+                                   headerText="#{bindings.employees.hints.lastName.label}" id="c9">
+                            <af:inputText value="#{row.bindings.lastName.inputValue}"
+                                          label="#{bindings.employees.hints.lastName.label}"
+                                          required="#{bindings.employees.hints.lastName.mandatory}"
+                                          columns="#{bindings.employees.hints.lastName.displayWidth}"
+                                          maximumLength="#{bindings.employees.hints.lastName.precision}"
+                                          shortDesc="#{bindings.employees.hints.lastName.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.lastName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.employees.hints.hireDate.name}" sortable="false"
+                                   headerText="#{bindings.employees.hints.hireDate.label}" id="c10">
+                            <af:inputDate value="#{row.bindings.hireDate.inputValue}"
+                                          label="#{bindings.employees.hints.hireDate.label}"
+                                          required="#{bindings.employees.hints.hireDate.mandatory}"
+                                          columns="#{bindings.employees.hints.hireDate.displayWidth}"
+                                          shortDesc="#{bindings.employees.hints.hireDate.tooltip}" id="id1">
+                                <f:validator binding="#{row.bindings.hireDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.employees.hints.hireDate.format}"/>
+                            </af:inputDate>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.employees.hints.phoneNumber.name}" sortable="false"
+                                   headerText="#{bindings.employees.hints.phoneNumber.label}" id="c11">
+                            <af:inputText value="#{row.bindings.phoneNumber.inputValue}"
+                                          label="#{bindings.employees.hints.phoneNumber.label}"
+                                          required="#{bindings.employees.hints.phoneNumber.mandatory}"
+                                          columns="#{bindings.employees.hints.phoneNumber.displayWidth}"
+                                          maximumLength="#{bindings.employees.hints.phoneNumber.precision}"
+                                          shortDesc="#{bindings.employees.hints.phoneNumber.tooltip}" id="it10">
+                                <f:validator binding="#{row.bindings.phoneNumber.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

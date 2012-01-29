@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">allDepartments</property>
+      <property
+         name="page">/allDepartments.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>allDepartments&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">115.59766</property>
+      <property
+         name="x">141.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">departmentOfLocation1700</property>
+      <property
+         name="page">/departmentOfLocation1700.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>departmentOfLocation1700&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">154.59766</property>
+      <property
+         name="x">402.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">findDepartment</property>
+      <property
+         name="page">/findDepartment.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>findDepartment&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">292.59766</property>
+      <property
+         name="x">549.0</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">allDepartmentsRemote</property>
+      <property
+         name="page">/allDepartmentsRemote.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>allDepartmentsRemote&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">301.59766</property>
+      <property
+         name="x">99.0</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">allDepartmentsJavaSession</property>
+      <property
+         name="page">/allDepartmentsJavaSession.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>allDepartmentsJavaSession&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">328.59766</property>
+      <property
+         name="x">306.0</property>
+   </View>
+   <View
+      id="View7">
+      <property
+         name="activityId">allDepartmentsJavaSession2</property>
+      <property
+         name="page">/allDepartmentsJavaSession2.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>allDepartmentsJavaSession2&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">316.59766</property>
+      <property
+         name="x">681.0</property>
+   </View>
+</SDM>

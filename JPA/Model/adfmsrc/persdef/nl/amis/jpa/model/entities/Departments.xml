@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Departments"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_DCName" Value="nl.amis.jpa.model.DataControls.HrLocal"/>
+    <Attr Name="_SDName" Value="nl.amis.jpa.model.entities.Departments"/>
+  </DesignTime>
+  <Variable
+    Name="location"
+    Kind="viewcriteria"
+    Type="java.lang.Long"
+    DefaultValue="1700">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <PDefAttribute
+    Name="departmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['nl.amis.jpa.model.ModelBundle']['nl.amis.jpa.model.entities.Departments.departmentId_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="departmentName">
+    <validation:LengthValidationBean
+      Name="departmentName_Rule_0"
+      ResId="${adfBundle['nl.amis.jpa.model.ModelBundle']['nl.amis.jpa.model.entities.Departments.departmentName_Rule_0']}"
+      OnAttribute="departmentName"
+      CompareType="GREATERTHAN"
+      DataType="CHARACTER"
+      CompareLength="3"
+      Inverse="false"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['nl.amis.jpa.model.ModelBundle']['nl.amis.jpa.model.entities.Departments.departmentName_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="locationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['nl.amis.jpa.model.ModelBundle']['nl.amis.jpa.model.entities.Departments.locationId_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="managerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="${adfBundle['nl.amis.jpa.model.ModelBundle']['nl.amis.jpa.model.entities.Departments.managerId_LABEL']}"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <ViewCriteria
+    Name="DepartmentsLocationCriteria"
+    ViewObjectName="nl.amis.jpa.model.entities.Departments"
+    Conjunction="AND"
+    Mode="2">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="locationId"
+        ViewAttribute="locationId"
+        Operator="="
+        Conjunction="AND"
+        Value=":location"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+</PDefViewObject>

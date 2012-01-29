@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="allDepartmentsPageDef"
+                Package="nl.amis.jpa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HrLocal" id="HrLocalIterator"/>
+    <accessorIterator MasterBinding="HrLocalIterator" Binds="departmentsFindAll" RangeSize="25" DataControl="HrLocal"
+                      BeanClass="nl.amis.jpa.model.entities.Departments" id="departmentsFindAllIterator"/>
+    <accessorIterator MasterBinding="departmentsFindAllIterator" Binds="employees" RangeSize="25" DataControl="HrLocal"
+                      BeanClass="nl.amis.jpa.model.entities.Employees" id="employeesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="departmentManager"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Employees" Name="departmentsFindAll1">
+        <AttrNames>
+          <Item Value="commissionPct"/>
+          <Item Value="email"/>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="hireDate"/>
+          <Item Value="jobId"/>
+          <Item Value="lastName"/>
+          <Item Value="phoneNumber"/>
+          <Item Value="salary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="employeesIterator" id="employees">
+      <nodeDefinition DefName="nl.amis.jpa.model.entities.Employees" Name="employees0">
+        <AttrNames>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="lastName"/>
+          <Item Value="hireDate"/>
+          <Item Value="phoneNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
