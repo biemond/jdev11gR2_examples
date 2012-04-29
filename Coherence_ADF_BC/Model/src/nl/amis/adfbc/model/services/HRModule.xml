@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRModule"
+  Version="11.1.2.60.81"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="Departments"
+    ViewObjectName="nl.amis.adfbc.model.viewobjects.Departments"/>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="nl.amis.adfbc.model.viewobjects.Employees"/>
+  <ViewUsage
+    Name="Employees1"
+    ViewObjectName="nl.amis.adfbc.model.viewobjects.Employees"/>
+  <ViewLinkUsage
+    Name="EmpDeptViewLink1"
+    ViewLinkObjectName="nl.amis.adfbc.model.viewobjects.EmpDeptViewLink"
+    SrcViewUsageName="nl.amis.adfbc.model.services.HRModule.Departments"
+    DstViewUsageName="nl.amis.adfbc.model.services.HRModule.Employees1"
+    Reversed="false"/>
+</AppModule>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="nl.amis.adfbc.model.services.HRModule">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="nl.amis.adfbc.model.Model" jbo.tmpdir="c:/temp" name="HRModuleLocal" jbo.passivationstore="file" ApplicationName="nl.amis.adfbc.model.services.HRModule"
+                       JDBCName="hr">
+         <AM-Pooling jbo.doconnectionpooling="true" jbo.ampool.doampooling="false"/>
+         <Security AppModuleJndiName="nl.amis.adfbc.model.services.HRModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HRModuleShared" ApplicationName="nl.amis.adfbc.model.services.HRModule" DeployPlatform="LOCAL" JDBCName="hr"
+                       jbo.project="nl.amis.adfbc.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="nl.amis.adfbc.model.services.HRModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

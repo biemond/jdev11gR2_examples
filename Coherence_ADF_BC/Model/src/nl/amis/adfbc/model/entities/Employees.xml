@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Employees"
+  Version="11.1.1.51.88"
+  DBObjectType="table"
+  DBObjectName="EMPLOYEES"
+  AliasName="Employees"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="nl.amis.adfbc.model.base.CoherenceEntityImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_superClass"
+      Value="nl.amis.adfbc.model.base.CoherenceEntityImpl"/>
+  </DesignTime>
+  <Attribute
+    Name="DepartmentId"
+    ColumnName="DEPARTMENT_ID"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    SQLType="FLOAT"
+    TableName="EMPLOYEES"/>
+  <Attribute
+    Name="EmployeeId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    SQLType="FLOAT"
+    TableName="EMPLOYEES"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="80"
+    ColumnName="EMAIL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMPLOYEES"/>
+  <Attribute
+    Name="FirstName"
+    Precision="80"
+    ColumnName="FIRST_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMPLOYEES"/>
+  <Attribute
+    Name="LastName"
+    Precision="80"
+    ColumnName="LAST_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMPLOYEES"/>
+  <Attribute
+    Name="HireDate"
+    IsNotNull="true"
+    ColumnName="HIRE_DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    SQLType="TIMESTAMP"
+    TableName="EMPLOYEES"/>
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    Precision="80"
+    ColumnName="JOB_ID"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMPLOYEES"/>
+  <AccessorAttribute
+    Name="Departments"
+    Association="nl.amis.adfbc.model.entities.EmpDeptFK"
+    AssociationEnd="nl.amis.adfbc.model.entities.EmpDeptFK.Departments"
+    AssociationOtherEnd="nl.amis.adfbc.model.entities.EmpDeptFK.Employees"
+    Type="nl.amis.adfbc.model.base.CoherenceEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmpEmailNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_EMAIL_NN"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpEmailUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMP_EMAIL_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpHireDateNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_HIRE_DATE_NN"/>
+      <Attr Name="_checkCondition" Value='"HIRE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.HireDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpJobNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_JOB_NN"/>
+      <Attr Name="_checkCondition" Value='"JOB_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.JobId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpLastNameNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMP_LAST_NAME_NN"/>
+      <Attr Name="_checkCondition" Value='"LAST_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.LastName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeesEmailCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEES_EMAIL_CHECK"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeesEmployeeIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEES_EMPLOYEE_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"EMPLOYEE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeesHireDateCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEES_HIRE_DATE_CHECK"/>
+      <Attr Name="_checkCondition" Value='"HIRE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.HireDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeesJobIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLOYEES_JOB_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"JOB_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.JobId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmployeesPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEES_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpDeptFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DEPT_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMP_DEPT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpJobFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="JOB_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMP_JOB_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Employees.JobId"/>
+    </AttrArray>
+  </Key>
+</Entity>

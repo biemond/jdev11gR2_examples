@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Departments"
+  Version="11.1.1.51.88"
+  FromList="DEPARTMENTS Departments"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  ComponentClass="nl.amis.adfbc.model.base.CoherenceViewObjectImpl"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SelectList="Departments.DEPARTMENT_ID, 
+       Departments.DEPARTMENT_NAME, 
+       Departments.LOCATION_ID">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName"
+      Value="nl.amis.adfbc.model.base.CoherenceViewObjectImpl"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Departments"
+    Entity="nl.amis.adfbc.model.entities.Departments"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="Departments"
+    AliasName="LOCATION_ID"/>
+  <ViewLinkAccessor
+    Name="Employees"
+    ViewLink="nl.amis.adfbc.model.viewobjects.EmpDeptViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

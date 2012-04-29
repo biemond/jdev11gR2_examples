@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Departments"
+  Version="11.1.1.51.88"
+  DBObjectType="table"
+  DBObjectName="DEPARTMENTS"
+  AliasName="Departments"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="nl.amis.adfbc.model.base.CoherenceEntityImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_superClass"
+      Value="nl.amis.adfbc.model.base.CoherenceEntityImpl"/>
+  </DesignTime>
+  <Attribute
+    Name="DepartmentId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="DEPARTMENT_ID"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    SQLType="FLOAT"
+    TableName="DEPARTMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DepartmentName"
+    Precision="80"
+    ColumnName="DEPARTMENT_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="DEPARTMENTS"/>
+  <Attribute
+    Name="LocationId"
+    ColumnName="LOCATION_ID"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    SQLType="FLOAT"
+    TableName="DEPARTMENTS"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="nl.amis.adfbc.model.entities.EmpDeptFK"
+    AssociationEnd="nl.amis.adfbc.model.entities.EmpDeptFK.Employees"
+    AssociationOtherEnd="nl.amis.adfbc.model.entities.EmpDeptFK.Departments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="DepartmentsDepartmentIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPARTMENTS_DEPARTMENT_ID_CHEC"/>
+      <Attr Name="_checkCondition" Value='"DEPARTMENT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="nl.amis.adfbc.model.entities.Departments.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DepartmentsPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPARTMENTS_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="nl.amis.adfbc.model.entities.Departments.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptNameNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPT_NAME_NN"/>
+      <Attr Name="_checkCondition" Value='"DEPARTMENT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="nl.amis.adfbc.model.entities.Departments.DepartmentName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptLocFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LOC_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_LOC_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="nl.amis.adfbc.model.entities.Departments.LocationId"/>
+    </AttrArray>
+  </Key>
+</Entity>

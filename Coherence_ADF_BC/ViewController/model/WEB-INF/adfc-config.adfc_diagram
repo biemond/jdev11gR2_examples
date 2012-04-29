@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">418.90234</property>
+      <property
+         name="x">89.350586</property>
+   </OverallProperties>
+   <View
+      id="View3">
+      <property
+         name="activityId">employeesADFBC</property>
+      <property
+         name="page">/employeesADFBC.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeesADFBC&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">89.350586</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">employees</property>
+      <property
+         name="page">/employees.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employees&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">318.29883</property>
+      <property
+         name="x">634.0</property>
+   </View>
+</SDM>

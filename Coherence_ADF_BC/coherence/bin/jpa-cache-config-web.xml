@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<cache-config>
+  <caching-scheme-mapping>
+    <cache-mapping>
+      <cache-name>Employees</cache-name>
+      <scheme-name>jpa-distributed</scheme-name>
+    </cache-mapping>
+    <cache-mapping>
+      <cache-name>Departments</cache-name>
+      <scheme-name>jpa-distributed</scheme-name>
+    </cache-mapping>
+  </caching-scheme-mapping>
+  <caching-schemes>
+    <distributed-scheme>
+      <scheme-name>jpa-distributed</scheme-name>
+      <service-name>JpaDistributedCache</service-name>
+      <backing-map-scheme>
+        <read-write-backing-map-scheme>
+          <internal-cache-scheme>
+            <local-scheme/>
+          </internal-cache-scheme>
+          <cachestore-scheme>
+            <class-scheme>
+              <class-name>com.tangosol.coherence.jpa.JpaCacheStore</class-name>
+              <init-params>
+                <init-param>
+                  <param-type>java.lang.String</param-type>
+                  <param-value>{cache-name}</param-value>
+                </init-param>
+                <init-param>
+                  <param-type>java.lang.String</param-type>
+                  <param-value>nl.amis.jpa.model.{cache-name}</param-value>
+                </init-param>
+                <init-param>
+                  <param-type>java.lang.String</param-type>
+                  <param-value>Model</param-value>
+                </init-param>
+              </init-params>
+            </class-scheme>
+          </cachestore-scheme>
+        </read-write-backing-map-scheme>
+      </backing-map-scheme>
+      <autostart>true</autostart>
+    </distributed-scheme>
+  </caching-schemes>
+</cache-config>

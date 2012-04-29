@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="employees.jspx" id="d1">
+            <af:form id="f1">
+                <af:panelStretchLayout id="psl1">
+                    <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1">
+                        <af:panelHeader text="Coherence JPA employees" id="coherence">
+                            <af:table var="row" value="#{Employees.modelEmployees}" binding="#{Employees.table1}"
+                                      id="table1" width="680" inlineStyle="height:144px;">
+                                <af:column sortable="false" headerText="Id" id="c1">
+                                    <af:outputText value="#{row.employeeId}" id="ot1"/>
+                                </af:column>
+                                <af:column sortable="false" headerText="Firstname" id="c2">
+                                    <af:outputText value="#{row.firstName}" id="ot2"/>
+                                </af:column>
+                                <af:column sortable="false" headerText="Lastname" id="c3">
+                                    <af:outputText value="#{row.lastName}" id="ot3"/>
+                                </af:column>
+                                <af:column sortable="false" headerText="Email" id="c4">
+                                    <af:outputText value="#{row.email}" id="ot4"/>
+                                </af:column>
+                            </af:table>
+                        </af:panelHeader>
+                        <af:panelHeader text="Coherence JPA departments" id="coherence2">
+                            <af:table var="row" value="#{Employees.modelDepartments}" id="table2" width="680"
+                                      binding="#{Employees.table2}" inlineStyle="height:144px;">
+                                <af:column sortable="false" headerText="Id" id="c5">
+                                    <af:outputText value="#{row.departmentId}" id="ot5"/>
+                                </af:column>
+                                <af:column sortable="false" headerText="Name" id="c6">
+                                    <af:outputText value="#{row.departmentName}" id="ot6"/>
+                                </af:column>
+                            </af:table>
+                        </af:panelHeader>
+                    </af:panelGroupLayout>
+                    </f:facet>
+                </af:panelStretchLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

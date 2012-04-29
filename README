@@ -1,1 +1,2 @@
-JPA example with EJB session remote ,local en java session facade
+JPA example,  with EJB session remote ,local en java session facade
+Coherence_ADF_BC, ADF BC works on top of Coherence which uses JPA to fill the cache.
