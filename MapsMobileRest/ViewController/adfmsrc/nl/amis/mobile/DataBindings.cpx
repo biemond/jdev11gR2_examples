@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.94" id="DataBindings"
+             SeparateXMLFiles="false" Package="nl.amis.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/maps/start.amx" usageId="nl_amis_mobile_startPageDef"/>
+    <page path="/maps/result.amx" usageId="nl_amis_mobile_resultPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="nl_amis_mobile_startPageDef" path="maps.startPageDef"/>
+    <page id="nl_amis_mobile_resultPageDef" path="maps.resultPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="MapsClient" path="nl.amis.mobile.MapsClient"/>
+  </dataControlUsages>
+</Application>

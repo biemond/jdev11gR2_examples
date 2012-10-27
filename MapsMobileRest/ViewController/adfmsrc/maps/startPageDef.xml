@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.94" id="startPageDef" Package="maps">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="MapsClient" id="MapsClientIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="searchAction" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchAction"
+                  IsViewObjectMethod="false" DataControl="MapsClient" InstanceName="data.MapsClient.dataProvider"
+                  ReturnName="data.MapsClient.methodResults.searchAction_MapsClient_dataProvider_searchAction_result"/>
+    <attributeValues IterBinding="MapsClientIterator" id="search">
+      <AttrNames>
+        <Item Value="search"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

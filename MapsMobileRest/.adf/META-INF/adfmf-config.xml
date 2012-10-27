@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf-config xmlns="http://xmlns.oracle.com/adf/mf/config">
+  <skin-family>mobileFusionFx</skin-family>
+  <skin-version>1</skin-version>
+</adfmf-config>

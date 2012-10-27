@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Maps Result" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="back" text="Back"/>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:panelLabelAndMessage label="Search result" id="plam1">
+        <amx:outputText value="#{bindings.result.inputValue}" id="ot2"/>
+      </amx:panelLabelAndMessage>
+    </amx:panelFormLayout>
+    <amx:iterator var="row" value="#{bindings.geocoderResults1.collectionModel}" id="i1">
+      <amx:panelLabelAndMessage label="formatted Address" id="plam9">
+        <amx:outputText value="#{row.formattedAddress}" id="ot10"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelFormLayout id="pfl2">
+        <amx:panelLabelAndMessage label="#{bindings.lat.hints.label}" id="plam12">
+          <amx:outputText value="#{bindings.lat.inputValue}" id="ot13"/>
+        </amx:panelLabelAndMessage>
+        <amx:panelLabelAndMessage label="#{bindings.lng.hints.label}" id="plam4">
+          <amx:outputText value="#{bindings.lng.inputValue}" id="ot5"/>
+        </amx:panelLabelAndMessage>
+      </amx:panelFormLayout>
+      <amx:panelLabelAndMessage label="#{bindings.geocoderResults1.hints.partialMatch.label}" id="plam11">
+        <amx:outputText value="#{row.partialMatch}" id="ot12"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.geocoderResults1.hints.types.label}" id="plam3">
+        <amx:outputText value="#{row.types}" id="ot4"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="location Type" id="plam6">
+        <amx:outputText value="#{row.geometry.bindings.locationType.inputValue}" id="ot7"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.geocoderResults1.hints.addressComponents.country.label}" id="plam7">
+        <amx:outputText value="#{row.addressComponents.bindings.country.inputValue}" id="ot8"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="State"
+                                id="plam10">
+        <amx:outputText value="#{row.addressComponents.bindings.administrativeAreaLevel1.inputValue}" id="ot11"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.geocoderResults1.hints.addressComponents.locality.label}" id="plam5">
+        <amx:outputText value="#{row.addressComponents.bindings.locality.inputValue}" id="ot6"/>
+      </amx:panelLabelAndMessage>
+      <amx:panelLabelAndMessage label="#{bindings.geocoderResults1.hints.addressComponents.subLocality.label}"
+                                id="plam2">
+        <amx:outputText value="#{row.addressComponents.bindings.subLocality.inputValue}" id="ot3"/>
+      </amx:panelLabelAndMessage>
+    </amx:iterator>
+    <amx:commandButton actionListener="#{bindings.First.execute}" text="First" disabled="#{!bindings.First.enabled}"
+                       id="cb2"/>
+    <amx:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                       disabled="#{!bindings.Previous.enabled}" id="cb4"/>
+    <amx:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                       id="cb3"/>
+    <amx:commandButton actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                       id="cb5"/>
+  </amx:panelPage>
+ 
+</amx:view>

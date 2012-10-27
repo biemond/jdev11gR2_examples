@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   name="MapsRestClient" id="nl.amis.MapsMobileRest"
+                   appControllerFolder="ApplicationController">
+  <adfmf:featureReference id="Maps" allowDeviceAccess="true"/>
+  <adfmf:preferences/>
+  <adfmf:error/>
+  <adfmf:navigation>
+    <adfmf:navigationBar enabled="false" displayHideShowNavigationBarControl="false"/>
+    <adfmf:springboard enabled="false" showSpringboardAtStartup="false"/>
+  </adfmf:navigation>
+</adfmf:application>

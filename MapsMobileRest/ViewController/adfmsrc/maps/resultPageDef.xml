@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.94" id="resultPageDef" Package="maps">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="MapsClient" id="MapsClientIterator" ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="MapsClientIterator" Binds="geoResult" RangeSize="25" DataControl="MapsClient"
+                      BeanClass="nl.amis.rest.model.maps.GeocoderResultList" id="geoResultIterator"
+                      ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="geoResultIterator" Binds="geocoderResults" RangeSize="25" DataControl="MapsClient"
+                      BeanClass="nl.amis.rest.model.maps.GeocoderResult" id="geocoderResultsIterator"
+                      ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="geocoderResultsIterator" Binds="geometry" RangeSize="25" DataControl="MapsClient"
+                      BeanClass="nl.amis.rest.model.maps.GeocoderGeometry" id="geometryIterator"
+                      ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="geometryIterator" Binds="location" RangeSize="25" DataControl="MapsClient"
+                      BeanClass="nl.amis.rest.model.maps.LatLng" id="locationIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MapsClientIterator" id="result">
+      <AttrNames>
+        <Item Value="result"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="geocoderResultsIterator" id="geocoderResults">
+      <nodeDefinition DefName="nl.amis.rest.model.maps.GeocoderResult" Name="geocoderResults0">
+        <AttrNames>
+          <Item Value="formattedAddress"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="addressComponents"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails">
+        <AttrNames>
+          <Item Value="country"/>
+          <Item Value="administrativeAreaLevel1"/>
+          <Item Value="locality"/>
+          <Item Value="subLocality"/>
+          <Item Value="route"/>
+          <Item Value="streetAddress"/>
+          <Item Value="subPremise"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="geocoderResultsIterator" id="geocoderResults1">
+      <nodeDefinition DefName="nl.amis.rest.model.maps.GeocoderResult" Name="geocoderResults10">
+        <AttrNames>
+          <Item Value="formattedAddress"/>
+          <Item Value="partialMatch"/>
+          <Item Value="types"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="geometry"/>
+          <Item Value="addressComponents"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="nl.amis.rest.model.maps.GeocoderGeometry">
+        <AttrNames>
+          <Item Value="locationType"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails">
+        <AttrNames>
+          <Item Value="country"/>
+          <Item Value="administrativeAreaLevel1"/>
+          <Item Value="locality"/>
+          <Item Value="subLocality"/>
+          <Item Value="route"/>
+          <Item Value="streetAddress"/>
+          <Item Value="subPremise"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="geocoderResultsIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="geocoderResultsIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="geocoderResultsIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="geocoderResultsIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="locationIterator" id="lat">
+      <AttrNames>
+        <Item Value="lat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="locationIterator" id="lng">
+      <AttrNames>
+        <Item Value="lng"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

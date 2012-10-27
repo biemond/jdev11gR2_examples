@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">258.5664</property>
+      <property
+         name="x">91.65625</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">result</property>
+      <property
+         name="page">/maps/result.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>result&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">98.36719</property>
+      <property
+         name="x">620.65625</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">start</property>
+      <property
+         name="page">/maps/start.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>start&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">99.36719</property>
+      <property
+         name="x">274.8125</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L46,579.64386,94.86719,315.8125,95.80078,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">show</property>
+      <property
+         name="sdm:polyPoints">R54,315.8249,102.80078,579.65625,101.86719,L54</property>
+   </ControlFlowCase>
+</SDM>

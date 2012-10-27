@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="Maps" name="Maps" credentials="none">
+    <adfmf:content id="Maps.1">
+      <adfmf:amx file="maps/maps-tf.xml#maps-tf"/>
+    </adfmf:content>
+  </adfmf:feature>
+
+</adfmf:features>

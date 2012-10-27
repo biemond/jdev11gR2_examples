@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="maps-tf">
+    <default-activity>start</default-activity>
+    <view id="start">
+      <page>/maps/start.amx</page>
+    </view>
+    <view id="result">
+      <page>/maps/result.amx</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id>start</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>show</from-outcome>
+        <to-activity-id>result</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>result</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>start</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

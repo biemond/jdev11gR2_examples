@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.62.94" id="DataControls"
+                    Package="nl.amis.mobile">
+  <AdapterDataControl id="MapsClient" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="nl.amis.rest.model.MapsClient"
+                      BeanClass="nl.amis.rest.model.MapsClient" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="nl.amis.rest.model.maps.GeocoderResultList"/>
+      <TypeInfo FullName="nl.amis.rest.model.MapsClient"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="nl.amis.rest.model.MapsClient" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>
