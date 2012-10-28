@@ -31,7 +31,7 @@
           <Item Value="addressComponents"/>
         </Accessors>
       </nodeDefinition>
-      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails">
+      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails" Name="geocoderResults1">
         <AttrNames>
           <Item Value="country"/>
           <Item Value="administrativeAreaLevel1"/>
@@ -55,12 +55,12 @@
           <Item Value="addressComponents"/>
         </Accessors>
       </nodeDefinition>
-      <nodeDefinition DefName="nl.amis.rest.model.maps.GeocoderGeometry">
+      <nodeDefinition DefName="nl.amis.rest.model.maps.GeocoderGeometry" Name="geocoderResults11">
         <AttrNames>
           <Item Value="locationType"/>
         </AttrNames>
       </nodeDefinition>
-      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails">
+      <nodeDefinition DefName="nl.amis.rest.model.maps.AddressDetails" Name="geocoderResults12">
         <AttrNames>
           <Item Value="country"/>
           <Item Value="administrativeAreaLevel1"/>

@@ -1,2 +1,4 @@
 JPA example,  with EJB session remote ,local en java session facade
 Coherence_ADF_BC, ADF BC works on top of Coherence which uses JPA to fill the cache.
+ITunesRestClient, calls the Itunes REST-JSON service and GSON for JSON deserialization.
+MapsMobileRest, An ADF Mobile application for Android and Apple and calls the Google Maps Geocoder Rest JSON service

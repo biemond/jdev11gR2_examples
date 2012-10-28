@@ -1,0 +1,41 @@
+MapsMobileRest, An ADF Mobile application for Android and Apple and calls the Google Maps Geocoder Rest JSON service
+for more info see this blog
+http://biemond.blogspot.nl/2012/10/using-json-rest-in-adf-mobile.html
+
+To handle JSON we can use the  RestServiceAdapter and JSONBeanSerializationHelper classes. 
+The RestServiceAdapter will handle the Rest Service and JSONBeanSerializationHelper helps us converting JSON to Java.
+
+Here we do the following steps.
+
+Create the RestServiceAdapter
+
+RestServiceAdapter restServiceAdapter = Model.createRestServiceAdapter();
+restServiceAdapter.clearRequestProperties();
+
+Use our Url Connection
+restServiceAdapter.setConnectionName("GoogleGeocodeJSON");
+
+HTTP Get operartion
+restServiceAdapter.setRequestType(RestServiceAdapter.REQUEST_TYPE_GET);
+
+Append the url with our search parameters
+restServiceAdapter.setRequestURI("?address="+search+"&sensor=true");
+
+Send and wait for the result.
+response = restServiceAdapter.send("");
+
+Next step is using the JSON deserialization, here we will use the JSONBeanSerializationHelper class.
+ServiceResult responseObject = (ServiceResult)jsonHelper.fromJSON(ServiceResult.class, response);  
+
+ServiceResult class will be used as output, too bad I can't use generics or annotations to control the JSON deserialization. So I will use JSONArray in case of 1 or more results.
+
+import oracle.adfmf.json.JSONArray;
+public class ServiceResult {
+   private String status;
+   private JSONArray results;
+
+JSONBeanSerializationHelper will look for attributes called .type and if that contains a class name then it will use that class for deserialization but I can't change the Google Maps service.
+
+So I made my own Helper class which converts all JSONArray or JSONObject to the right class and attributes.
+
+geoResult = GeocoderHelper.transformObject(responseObject).getResults(); 
